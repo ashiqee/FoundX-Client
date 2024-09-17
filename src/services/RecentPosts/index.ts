@@ -3,10 +3,13 @@ import { delay } from "@/src/utils/delay";
 
 export const getRecentPosts = async () => {
   const res = await fetch(
-    `${envConfig.baseApi}/items?sortBy=-createdAt&limit=9`
+    `${envConfig.baseApi}/items?sortBy=-createdAt&limit=3`
   );
 
+ 
+  
   await delay(5000);
+const data = await res.json()
 
-  return res.json();
+  return data;
 };
