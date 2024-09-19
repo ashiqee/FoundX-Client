@@ -1,24 +1,16 @@
-import React, { ReactNode, Suspense } from "react";
+import { ReactNode } from "react";
 
-import PostLoading from "./@recentPosts/loading";
-
-
-const layout = ({
+export default function layout({
   children,
   recentPosts,
 }: {
   children: ReactNode;
   recentPosts: ReactNode;
-}) => {
+}) {
   return (
     <>
       {children}
-      <Suspense fallback={<PostLoading/>}> 
       {recentPosts}
-      </Suspense>
-      
     </>
   );
-};
-
-export default layout;
+}

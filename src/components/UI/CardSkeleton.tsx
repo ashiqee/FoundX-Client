@@ -1,35 +1,29 @@
-'use client'
-import React from 'react';
-import {Card as NextUiCard, CardFooter, CardHeader, Skeleton} from "@nextui-org/react";
+import { Card as NextUiCard, CardHeader, CardFooter } from "@nextui-org/card";
+import { Skeleton } from "@nextui-org/skeleton";
 
 const CardSkeleton = () => {
-
-    return (
-      <Skeleton>
-
-<NextUiCard
-        isFooterBlurred
-        className="border-none"
-        radius="lg"
-      >
-        <CardHeader className='absolute top-1 z-10 flex-col items-start'>
-            <p className='absolute -top-0 right-1 rounded-full bg-black px-2 text-tiny uppercase' />
-           
-        </CardHeader>
-     
-        <CardFooter className="before:bg-white/10 border-white/20 border-t-1 overflow-hidden py-1 
-        absolute before:rounded-t-xl rounded-t-large bottom-0  shadow-small  z-10
-        flex justify-between
-        ">
-         <div>
-         <p className="text-tiny text-white/80" />
-         <p className="text-tiny text-white/80" />
-         </div>
-     
-        </CardFooter>
-      </NextUiCard>
+  return (
+    <NextUiCard className="h-[300px] w-full rounded-3xl">
+      <Skeleton className="rounded-lg">
+        <div className="h-60 rounded-lg bg-default-300" />
       </Skeleton>
-    );
+      <div className="flex items-center justify-between p-2">
+        <div className="w-3/4">
+          <Skeleton className="my-2 w-2/5 rounded-lg">
+            <div className="h-3 w-2/5 rounded-lg bg-default-200" />
+          </Skeleton>
+          <Skeleton className="w-3/5 rounded-lg">
+            <div className="h-3 w-3/5 rounded-lg bg-default-200" />
+          </Skeleton>
+        </div>
+        <div className="w-1/4">
+          <Skeleton className="my-2 w-full rounded-full">
+            <div className="h-8 w-full rounded-full bg-default-200" />
+          </Skeleton>
+        </div>
+      </div>
+    </NextUiCard>
+  );
 };
 
 export default CardSkeleton;
